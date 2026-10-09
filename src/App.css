@@ -1,0 +1,10 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 180px);
+  gap: 15px;
+  
+}
+
+.title {
+  position: top left;
+}
