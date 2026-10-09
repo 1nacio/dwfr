@@ -15,6 +15,7 @@ function GameCard(props) {
   else {
     corBorda = '#000000'
   }
+  
 
 
   return(
