@@ -3,13 +3,13 @@ import styles from './GameCard.module.css'
 function GameCard(props) {
   let corBorda;
 
-  if (props.descricao.toLowerCase().includes('nintendo')){
+  if (props.plataforma?.toLowerCase().includes('nintendo')){
     corBorda = '#FF0000'
   }
-  else if (props.descricao.toLowerCase().includes('playstation')) {
+  else if (props.plataforma?.toLowerCase().includes('playstation')) {
     corBorda = '#0000FF'
   }
-  else if(props.descricao.toLowerCase().includes('xbox')) {
+  else if(props.plataforma?.toLowerCase().includes('xbox')) {
     corBorda = '#66FF00'
   }
   else {
@@ -21,10 +21,10 @@ function GameCard(props) {
   return(
     <>
       <div className={styles.card}>
-        <img src={props.capa} alt={props.nome} style={{ borderColor: corBorda, boxShadow: `0 0 15px ${corBorda}` }}  />
-        <h2>{props.nome} ({props.ano})</h2>
-        <p>{props.descricao}</p>
-        <button className={styles.btn}>Saiba Mais</button>
+        <img src={props.imagem} alt={props.nome} style={{ borderColor: corBorda, boxShadow: `0 0 15px ${corBorda}` }}  />
+        <h2>{props.titulo}</h2>
+        <p>{props.plataforma}</p>
+        <button className= {styles.btn} onClick={() => props.onDeletar(props.id)}>Deletar</button>
       </div>
 
 
